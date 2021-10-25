@@ -63,3 +63,14 @@ resource "zerotier_network" "silence_of_the_lan" {
   }
   flow_rules = "drop;"
 }
+
+resource "zerotier_network" "dns_settings" {
+  name = "dns_settings"
+  dns {
+    domain = "leisure.town"
+    servers = [
+      "1.2.3.4",
+      "5.6.7.8"
+    ]
+  }
+}
